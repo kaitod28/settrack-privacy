@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SetTrack – Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161a22;
+    --border: #242836;
+    --accent: #5b6ef5;
+    --accent2: #3de0a0;
+    --text: #e8eaf2;
+    --muted: #7a8099;
+    --heading-font: 'DM Serif Display', serif;
+    --body-font: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(13,15,20,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo-text {
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  .badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent2);
+    background: rgba(61,224,160,0.1);
+    border: 1px solid rgba(61,224,160,0.25);
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+
+  .hero {
+    margin-bottom: 56px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 40%, var(--muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-meta {
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* Section cards */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+
+  .section:hover { border-color: rgba(91,110,245,0.4); }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .section-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    background: rgba(91,110,245,0.12);
+  }
+
+  h2 {
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  p { color: var(--muted); margin-bottom: 12px; font-size: 15px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+
+  ul li {
+    color: var(--muted);
+    font-size: 15px;
+    padding: 8px 0 8px 24px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+
+  ul li:last-child { border-bottom: none; }
+
+  ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-size: 13px;
+  }
+
+  .highlight {
+    display: inline;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .contact-box {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(91,110,245,0.12), rgba(61,224,160,0.08));
+    border: 1px solid rgba(91,110,245,0.3);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .contact-box h2 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+  }
+
+  .contact-box p { font-size: 14px; margin-bottom: 16px; }
+
+  .email-link {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    transition: opacity 0.2s;
+  }
+
+  .email-link:hover { opacity: 0.85; }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">🏋️</div>
+  <span class="logo-text">SetTrack</span>
+  <span class="badge">Privacy Policy</span>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-eyebrow">Legal Document</div>
+    <h1>Privacy Policy</h1>
+    <p>This policy explains how SetTrack collects, uses, and protects your personal information when you use our fitness tracking application.</p>
+    <div class="hero-meta">
+      <span>📅 Effective Date: April 17, 2026</span>
+      <span>🔄 Last Updated: April 17, 2026</span>
+    </div>
+  </div>
+
+  <!-- 1. Introduction -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <div>
+        <h2>1. Introduction</h2>
+      </div>
+    </div>
+    <p>Welcome to <span class="highlight">SetTrack</span> — a mobile application designed to help you track your gym workouts, monitor your exercise progress, and log the weights you lift each session.</p>
+    <p>We are committed to protecting your privacy. This Privacy Policy describes what data we collect, why we collect it, and how we keep it safe. By using SetTrack, you agree to the terms outlined in this policy.</p>
+  </div>
+
+  <!-- 2. Information We Collect -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <div>
+        <h2>2. Information We Collect</h2>
+      </div>
+    </div>
+    <p>We collect the following types of information when you register or use SetTrack:</p>
+    <ul>
+      <li><span class="highlight">Full Name</span> — used to personalize your experience within the app</li>
+      <li><span class="highlight">Email Address</span> — used for account creation, login, and communication</li>
+      <li><span class="highlight">Password</span> — stored securely using industry-standard encryption (hashing); we never store plain-text passwords</li>
+      <li><span class="highlight">Workout Records</span> — exercises performed, sets, reps, and weight (kg/lbs) per session that you log manually</li>
+      <li><span class="highlight">Plate Weight Data</span> — the specific weight plates you use, entered by you to help calculate your total load</li>
+    </ul>
+    <p style="margin-top:16px;">We do <span class="highlight">not</span> collect your location, payment information, or any sensitive personal data beyond what is listed above.</p>
+  </div>
+
+  <!-- 3. How We Use Your Information -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <div>
+        <h2>3. How We Use Your Information</h2>
+      </div>
+    </div>
+    <p>Your data is used solely to provide and improve the SetTrack service:</p>
+    <ul>
+      <li>Create and manage your personal account</li>
+      <li>Store and display your workout history and progress</li>
+      <li>Calculate total weight lifted per set based on plate data</li>
+      <li>Allow you to review and edit your past exercise records</li>
+      <li>Send important account notifications (e.g., password reset)</li>
+    </ul>
+    <p style="margin-top:16px;">We do <span class="highlight">not</span> sell, rent, or share your personal data with third parties for marketing purposes.</p>
+  </div>
+
+  <!-- 4. Data Storage & Security -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <div>
+        <h2>4. Data Storage &amp; Security</h2>
+      </div>
+    </div>
+    <p>Your data is stored securely on our servers. We apply the following security measures:</p>
+    <ul>
+      <li>Passwords are hashed using a secure one-way algorithm (e.g., bcrypt)</li>
+      <li>Data transmission between the app and server is encrypted using HTTPS/TLS</li>
+      <li>Access to user data is restricted to authorized personnel only</li>
+      <li>We regularly review our security practices to maintain data safety</li>
+    </ul>
+    <p style="margin-top:16px;">While we take reasonable precautions, no system is 100% secure. We encourage you to use a strong, unique password for your account.</p>
+  </div>
+
+  <!-- 5. Data Retention -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🗓️</div>
+      <div>
+        <h2>5. Data Retention</h2>
+      </div>
+    </div>
+    <p>We retain your data for as long as your account is active. If you choose to delete your account, all your personal information and workout records will be permanently removed from our servers within 30 days.</p>
+  </div>
+
+  <!-- 6. Your Rights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">✅</div>
+      <div>
+        <h2>6. Your Rights</h2>
+      </div>
+    </div>
+    <p>You have the following rights regarding your personal data:</p>
+    <ul>
+      <li><span class="highlight">Access</span> — request a copy of the data we hold about you</li>
+      <li><span class="highlight">Correction</span> — update or correct your personal information at any time through the app settings</li>
+      <li><span class="highlight">Deletion</span> — request deletion of your account and all associated data</li>
+      <li><span class="highlight">Withdrawal of Consent</span> — stop using the app and request data removal at any time</li>
+    </ul>
+  </div>
+
+  <!-- 7. Children's Privacy -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <div>
+        <h2>7. Children's Privacy</h2>
+      </div>
+    </div>
+    <p>SetTrack is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately.</p>
+  </div>
+
+  <!-- 8. Changes to This Policy -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <div>
+        <h2>8. Changes to This Policy</h2>
+      </div>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of the app after changes constitutes your acceptance of the revised policy.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h2>📬 Questions or Concerns?</h2>
+    <p>If you have any questions about this Privacy Policy or how your data is handled, feel free to reach out to us.</p>
+    <a href="mailto:settrack.support@gmail.com" class="email-link">6731503027@lamduan.mfu.ac.th</a>
+    <p style="margin-top:16px; font-size:13px;">We will respond within 3–5 business days.</p>
+  </div>
+</main>
+
+<footer>
+  © 2026 SetTrack. All rights reserved. &nbsp;·&nbsp; Mae Fah Luang University, Mobile Dev Project
+</footer>
+
+</body>
+</html>
